@@ -1,0 +1,25 @@
+<ion-content padding class="transparent-header">
+  <ion-header>
+  </ion-header>
+  <img class="logo" src=" assets/imgs/notes.png" />
+  <br>
+  <div padding>
+
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="user.email" placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="user.password" placeholder="Senha"></ion-input>
+    </ion-item>
+
+    <button ion-button block outline (click)="register(user)" color="light" class="login-button">Registrar</button>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <div (click)="login()">
+        <div text-center style="font-size: 12px">Já tem uma conta? <strong style="color: black">Faça login.</strong></div>
+    </div>
+  </ion-toolbar>
+</ion-footer> 
