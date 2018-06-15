@@ -1,14 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Notes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+{{notas | json}}
+{{nota | json}}
+{{user}}
+<ion-content class="cards-bg">
+  <ion-list no-lines fulls>
+    <ion-item inline (click)="abrirNota(nota.key)" *ngFor="let nota of notas">
+        <ion-card full>
+            <ion-card-header>
+                <strong>
+                  {{nota.nota}}
+                </strong>
+            </ion-card-header>
+            <ion-card-content>
+              {{nota.descricao}}
+            </ion-card-content>
+          </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-toolbar class="footer">
+    <div (click)="addNota()">
+        <div text-center style="font-size: 12px">Adicionar Nota</div>
+    </div>
+  </ion-toolbar>

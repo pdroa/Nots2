@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Adicionar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="addNota()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Título:</ion-label>
+        <ion-input type="text" [(ngModel)]="data.titulo" name="titulo" required=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Descrição:</ion-label>
+        <ion-input type="text" [(ngModel)]="data.descricao" name="descricao" required=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button full round color="secondary" type="submit">Adicionar</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

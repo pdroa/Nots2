@@ -12,13 +12,21 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AuthProvider } from '../providers/auth/auth';
 import { RegisterPage } from '../pages/register/register';
+import { NovaNotaPage } from '../pages/nova-nota/nova-nota';
+
+import * as firebase from 'firebase';
+import { EditNotaPage } from '../pages/edit-nota/edit-nota';
+import { NoteListProvider } from '../providers/note-list/note-list';
+firebase.initializeApp(FIREBASE_CONFIG)
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    EditNotaPage,
+    NovaNotaPage
   ],
   imports: [
     BrowserModule,
@@ -32,13 +40,16 @@ import { RegisterPage } from '../pages/register/register';
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    EditNotaPage,
+    NovaNotaPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    NoteListProvider
   ]
 })
 export class AppModule {}

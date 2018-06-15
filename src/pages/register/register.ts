@@ -41,7 +41,9 @@ export class RegisterPage {
         const result = await this.auth.register(user);
         if (result) {
           // Se ocorrer tudo bem redireciona para a página tabs
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(HomePage, {
+            user: this.user.email
+          });
         }
       } catch (e) {
         this.alert('Erro ao cadastrar', e.message);

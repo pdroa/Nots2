@@ -44,7 +44,10 @@ export class LoginPage {
         const result = await this.auth.login(user);
         if (result) {
           // Se ocorrer tudo bem redireciona para a página tabs
-          this.navCtrl.push(HomePage);
+          
+          this.navCtrl.setRoot(HomePage, {
+            user: this.user.email
+          });
         }
       } catch (e) {
         this.alert('Erro ao entrar!', e.message);
